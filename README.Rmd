@@ -1,0 +1,75 @@
+---
+output: rmarkdown::github_document
+bibliography: README-refs.bib
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# R/`tmle3mopttx`
+
+[![Travis-CI Build Status](https://travis-ci.org/tlverse/tmle3mopttx.svg?branch=master)](https://travis-ci.org/tlverse/tmle3mopttx)
+[![AppVeyor Build  Status](https://ci.appveyor.com/api/projects/status/github/tlverse/tmle3mopttx?branch=master&svg=true)](https://ci.appveyor.com/project/tlverse/tmle3mopttx)
+[![Coverage Status](https://codecov.io/gh/tlverse/tmle3mopttx/branch/master/graph/badge.svg)](https://codecov.io/gh/tlverse/tmle3mopttx)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+
+> Targeted Learning and Variable Importance with Optimal Individualized
+> Categorical Treatment
+
+__Authors:__ [Ivana Malenica](https://github.com/podTockom), [Jeremy R. Coyle](https://github.com/jeremyrcoyle) and [Mark J. van der Laan](https://vanderlaan-lab.org/)
+
+## Description
+
+Suppose one wishes to maximize (or minimize) the population mean of an outcome where for each individual one has access to measured baseline covariates. We consider estimation of the mean outcome under the optimal rule, where the candidate rules are restricted to depend only on user-supplied subset of the baseline covariates. The estimation problem is addressed in a statistical model for the data distribution that is nonparametric. 
+
+The `tmle3mopttx` is an adapter/extension R package in the `tlverse` ecosystem, that estimates the mean outcome under the following regimes:
+
+(1) **Optimal Individualized Treatment for categorical treatment,**
+(2) **Optimal Individualized Treatment based on possibly sub-optimal rules (including static rules),**
+(3) **Optimal Individualized Treatment based on realistic rules.**
+
+The `tmle3mopttx` also provides **variable importance** analysis in terms of optimizing the population mean of an outcome under rules 1-3.
+
+In addition, `tmle3mopttx` supports estimating the mean outcome under regimes 1-3 under:
+
+1. **Missing outcome.** 
+
+In order to avoid nested cross-validation, `tmle3mopttx` relies on split-specific estimates of $\mathbb{E}_0(Y|A,W)$ and $P_0(A|W)$ in order to estimate the rule. The targeted maximum likelihood estimates of the mean performance under the estimated rule are obtained using CV-TMLE. 
+
+For additional background on Targeted Learning and previous work on optimal individualized treatment regimes, please consider consulting @vdl2007super, @cvtmle2010, @vdl2011targeted, @vanderLaanLuedtke15, @luedtke2016super, @jeremythesis and @vdl2018targeted.
+
+---
+
+## Installation
+
+You can install the most recent _stable release_ from GitHub via [`devtools`](https://www.rstudio.com/products/rpackages/devtools/) with:
+                                                                                              
+```{r tmle3mopttx-installation, eval = FALSE}
+devtools::install_github("tlverse/tmle3mopttx")
+```
+
+---
+
+## Issues
+
+If you encounter any bugs or have any specific feature requests, please [file an
+issue](https://github.com/tlverse/tmle3mopttx/issues).
+
+---
+
+## License
+
+The contents of this repository are distributed under the GPL-3 license.
+See file `LICENSE` for details.
+
+-----
+
+## References
+
